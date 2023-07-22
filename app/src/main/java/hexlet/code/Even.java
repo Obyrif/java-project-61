@@ -20,11 +20,12 @@ public class Even {
             System.out.println("Your answer: " + answer);
             String correctAnswer = (number % 2 == 0) ? "yes" : "no";
             if (answer.equalsIgnoreCase(correctAnswer)) {
-                System.out.println("Correct, " + userName + "!");
+                System.out.println("Correct!");
             } else {
-                System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.\n" +
-                        "Let's try again, " + userName);
+                System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.\n"
+                       + "Let's try again, " + userName);
             }
         }
+        System.out.println("Congratulations, " + userName + "!");
     }
 }
