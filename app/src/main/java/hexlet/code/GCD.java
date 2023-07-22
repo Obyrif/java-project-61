@@ -4,10 +4,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GCD {
-    public static void main(String[] args) {
-        getGCD();
-    }
-
     public static void getGCD() {
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name?");
@@ -42,6 +38,7 @@ public class GCD {
 
             }
         }
+        System.out.println("Congratulations, " + userName);
     }
 
     public static int calculateGCD(int a, int b) {
