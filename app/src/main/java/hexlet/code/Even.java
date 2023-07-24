@@ -4,13 +4,14 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Even {
+    private static String userName;
     public static void getEven() {
         Scanner sc = new Scanner(System.in);
         Random random = new Random();
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         Scanner sc1 = new Scanner(System.in);
-        String userName = sc1.nextLine();
+        userName = sc1.nextLine();
         System.out.println("Hello, " + userName + "!");
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         for (int i = 0; i < 3; i++) {
@@ -24,6 +25,7 @@ public class Even {
             } else {
                 System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.\n"
                        + "Let's try again, " + userName);
+                System.exit(0);
             }
         }
         System.out.println("Congratulations, " + userName + "!");

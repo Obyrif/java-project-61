@@ -6,7 +6,7 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter the game number and press Enter.");
-        System.out.println("1 - Greet\n2 - Even\n3 - Calc\n4 - GCD\n5 - Progression\n0 - Exit");
+        System.out.println("1 - Greet\n2 - Even\n3 - Calc\n4 - GCD\n5 - Progression\n6 - Prime\n0 - Exit");
         if (sc.hasNext()) {
             int player = sc.nextInt();
             System.out.println("Your choice: " + player + "\n");
@@ -20,6 +20,8 @@ public class App {
                 GCD.getGCD();
             } else if (player == 5) {
                 Progression.getProgression();
+            } else if (player == 6) {
+                Prime.getPrime();
             } else if (player == 0) {
                 sc.close();
             }

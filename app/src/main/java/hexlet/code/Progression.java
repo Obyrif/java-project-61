@@ -5,13 +5,10 @@ import java.util.Scanner;
 
 public class Progression {
     private static String userName;
-    public static void main(String[] args) {
-        getProgression();
-    }
 
     public static void getProgression() {
         System.out.println("Welcome to the Brain Games!");
-        System.out.println("May I have your name?");
+        System.out.print("May I have your name?");
         Scanner sc = new Scanner(System.in);
         userName = sc.nextLine();
         System.out.println("Hello, " + userName + "!");
@@ -34,7 +31,7 @@ public class Progression {
             int currentNumber = firstNumber;
 
             for (int i = 0; i < progressionLength; i++) {
-                if(i == index) {
+                if (i == index) {
                     System.out.print(".. ");
                 } else {
                     System.out.print(currentNumber + " ");
@@ -46,15 +43,17 @@ public class Progression {
             System.out.print("Your answer: ");
             int answer = scanner.nextInt();
             int hiddenNumber = firstNumber + index * difference;
-            if(answer == hiddenNumber) {
+            if (answer == hiddenNumber) {
                 System.out.println("Correct!");
             } else {
                 System.out.println(answer + "is wrong answer ;(. Correct answer was " + hiddenNumber + ".\n"
-                      + "Let's try again, " + userName);
-                break;
+                        + "Let's try again, " + userName);
+                System.exit(0);
             }
             count++;
         }
-        System.out.println("Congratulations, " + userName + "!");
+        if(count == 3) {
+            System.out.println("Congratulations, " + userName + "!");
+        }
     }
 }
