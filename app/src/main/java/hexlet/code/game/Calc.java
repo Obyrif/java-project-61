@@ -1,4 +1,6 @@
-package hexlet.code;
+package hexlet.code.game;
+
+import hexlet.code.Cli;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -6,13 +8,10 @@ import java.util.Scanner;
 public class Calc {
     private static  String userName;
     public static void getCalc() {
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name?");
-        Scanner sc = new Scanner(System.in);
-        userName = sc.nextLine();
-        System.out.println("Hello, " + userName + "!");
-        Random rd = new Random();
+        Cli.getUserName();
 
+        Random rd = new Random();
+        Scanner sc = new Scanner(System.in);
         System.out.println("What is the result of the expression?");
         int counter = 0;
         while (counter < 3) {
@@ -30,7 +29,7 @@ public class Calc {
                     } else {
                         System.out.println(answerSum + " is wrong answer ;(. Correct answer was " + sum + ".\n"
                                 + "Let's try again.");
-                        System.exit(0);
+                        return;
                     }
                     break;
                 case 1:
@@ -43,7 +42,7 @@ public class Calc {
                     } else {
                         System.out.println(answerMinus + " is wrong answer ;(. Correct answer was " + minus + ".\n"
                                 + "Let's try again.");
-                        System.exit(0);
+                        return;
                     }
                     break;
                 case 2:
@@ -56,7 +55,7 @@ public class Calc {
                     } else {
                         System.out.println(answerEven + " is wrong answer ;(. Correct answer was " + even + ".\n"
                                 + "Let's try again.");
-                        System.exit(0);
+                        return;
                     }
                     break;
                 default:

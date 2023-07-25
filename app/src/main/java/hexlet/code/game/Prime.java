@@ -1,4 +1,6 @@
-package hexlet.code;
+package hexlet.code.game;
+
+import hexlet.code.Cli;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -6,20 +8,16 @@ import java.util.Scanner;
 public class Prime {
     private static String userName;
     public static void getPrime() {
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        Scanner sc = new Scanner(System.in);
-        userName = sc.nextLine();
-        System.out.println("Hello, " + userName + "!");
+        Cli.getUserName();
 
+        Scanner sc = new Scanner(System.in);
         Random random = new Random();
         int count = 0;
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
         while (count < 3) {
             int number = random.nextInt(100); // генерируем число
-            int currentNumber = number;
-            System.out.println("Question: " + currentNumber);
+            System.out.println("Question: " + number);
             System.out.print("Your answer: ");
             String answer = sc.nextLine();
             boolean isPrimeNumber = true;
@@ -35,7 +33,7 @@ public class Prime {
             } else {
                 System.out.println(answer + " is wrong answer ;(. Correct answer was " + result + ".\n"
                         + "Let's try again, " + userName);
-                System.exit(0);
+                return;
             }
             count++;
         }

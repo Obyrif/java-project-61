@@ -1,4 +1,6 @@
-package hexlet.code;
+package hexlet.code.game;
+
+import hexlet.code.Cli;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -6,13 +8,10 @@ import java.util.Scanner;
 public class GCD {
     private static String userName;
     public static void getGCD() {
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name?");
-        Scanner sc = new Scanner(System.in);
-        userName = sc.nextLine();
-        System.out.println("Hello, " + userName + "!");
+        Cli.getUserName();
 
         Random rd = new Random();
+        Scanner sc = new Scanner(System.in);
         System.out.println("Find the greatest common divisor of given numbers.");
         int counter = 0;
         while (counter < 3) {
@@ -29,9 +28,9 @@ public class GCD {
                         System.out.println("Correct!");
                         counter++;
                     } else {
-                        System.out.println(answer + "is wrong answer ;(. Correct answer was '25'.\n"
+                        System.out.println(answer + " is wrong answer ;(. Correct answer was '25'.\n"
                                + "Let's try again, " + userName);
-                        System.exit(0);
+                        return;
                     }
                     break;
                 default:
