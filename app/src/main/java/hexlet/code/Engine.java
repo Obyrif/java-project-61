@@ -9,10 +9,6 @@ import hexlet.code.game.Progression;
 import java.util.Scanner;
 
 public class Engine {
-    public static void main(String[] args) {
-        playGame();
-    }
-
     public static void playGame() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter the game number and press Enter.");
