@@ -48,7 +48,7 @@ public class Progression {
             }
             count++;
         }
-        if(count == 3) {
+        if (count == 3) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }

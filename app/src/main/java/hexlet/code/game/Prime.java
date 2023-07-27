@@ -23,13 +23,13 @@ public class Prime {
             String answer = sc.nextLine();
             boolean isPrimeNumber = true;
             for (int i = 2; i < number; i++) {
-                if(number % i == 0) {
+                if (number % i == 0) {
                     isPrimeNumber = false;
                     break;
                 }
             }
             String result = isPrimeNumber ? "yes" : "no";
-            if(answer.equalsIgnoreCase(result)) {
+            if (answer.equalsIgnoreCase(result)) {
                 System.out.println("Correct!");
             } else {
                 System.out.println(answer + " is wrong answer ;(. Correct answer was " + result + ".\n"
@@ -38,7 +38,7 @@ public class Prime {
             }
             count++;
         }
-        if(count == 3) {
+        if (count == 3) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }

@@ -20,26 +20,26 @@ public class GCD {
             int num1 = rd.nextInt(101);
             int num2 = rd.nextInt(101);
             if (randomNumber == 0) {
-                    System.out.println("Question: " + num1 + " " + num2);
-                    int gcd = calculateGCD(num1, num2);
-                    System.out.print("Your answer: ");
-                    int answer = sc.nextInt();
-                    if (answer == gcd) {
-                        System.out.println("Correct!");
-                        counter++;
-                    } else {
-                        System.out.println(answer + " is wrong answer ;(. Correct answer was " + calculateGCD(num1, num2) + ".\n"
-                                + "Let's try again, " + userName);
-                        System.exit(0);
-                    }
+                System.out.println("Question: " + num1 + " " + num2);
+                int gcd = calcGCD(num1, num2);
+                System.out.print("Your answer: ");
+                int answer = sc.nextInt();
+                if (answer == gcd) {
+                    System.out.println("Correct!");
+                    counter++;
+                } else {
+                    System.out.println(answer + " is wrong answer ;(. Correct answer was " + calcGCD(num1, num2) + ".\n"
+                            + "Let's try again, " + userName);
+                    System.exit(0);
                 }
+            }
         }
-        if(counter == 3) {
+        if (counter == 3) {
             System.out.println("Congratulations, " + userName);
         }
     }
 
-    public static int calculateGCD(int a, int b) {
+    public static int calcGCD(int a, int b) {
         while (b != 0) {
             int temp = b;
             b = a % b;

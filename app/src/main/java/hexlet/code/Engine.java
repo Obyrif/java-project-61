@@ -1,11 +1,15 @@
 package hexlet.code;
 
-import hexlet.code.game.*;
+import hexlet.code.game.Calc;
+import hexlet.code.game.Even;
+import hexlet.code.game.GCD;
+import hexlet.code.game.Prime;
+import hexlet.code.game.Progression;
 
 import java.util.Scanner;
 
 public class Engine {
-    public static void PlayGame() {
+    public static void playGame() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet\n2 - Even\n3 - Calc\n4 - GCD\n5 - Progression\n6 - Prime\n0 - Exit");

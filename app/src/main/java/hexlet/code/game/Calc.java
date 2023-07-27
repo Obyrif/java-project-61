@@ -23,7 +23,7 @@ public class Calc {
                 case 0 -> {
                     int sum = num1 + num2;
                     System.out.print("Question: " + num1 + " + " + num2);
-                    System.out.print("Your answer: " );
+                    System.out.print("Your answer: ");
                     int answerSum = sc.nextInt();
                     if (sum == answerSum) {
                         System.out.println("Correct!");
@@ -63,7 +63,7 @@ public class Calc {
             }
             counter++;
         }
-        if(counter == 3) {
+        if (counter == 3) {
             System.out.println("Congratulations! " + userName);
         }
     }
