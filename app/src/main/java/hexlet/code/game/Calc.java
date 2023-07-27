@@ -5,6 +5,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Calc {
+    public static void main(String[] args) {
+        getCalc();
+    }
     public static void getCalc() {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
