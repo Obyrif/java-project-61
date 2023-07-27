@@ -1,16 +1,17 @@
 package hexlet.code.game;
 
-import hexlet.code.Cli;
 
 import java.util.Random;
 import java.util.Scanner;
 
 public class Prime {
-    private static String userName;
     public static void getPrime() {
-        Cli.getUserName();
-
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
         Scanner sc = new Scanner(System.in);
+        String userName = sc.nextLine();
+        System.out.println("Hello, " + userName + "!");
+
         Random random = new Random();
         int count = 0;
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");

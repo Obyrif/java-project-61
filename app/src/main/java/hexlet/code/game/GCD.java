@@ -1,42 +1,38 @@
 package hexlet.code.game;
 
-import hexlet.code.Cli;
 
 import java.util.Random;
 import java.util.Scanner;
 
 public class GCD {
-    private static String userName;
     public static void getGCD() {
-        Cli.getUserName();
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        Scanner sc = new Scanner(System.in);
+        String userName = sc.nextLine();
+        System.out.println("Hello, " + userName + "!");
 
         Random rd = new Random();
-        Scanner sc = new Scanner(System.in);
         System.out.println("Find the greatest common divisor of given numbers.");
         int counter = 0;
         while (counter < 3) {
             int randomNumber = rd.nextInt(2);
             int num1 = rd.nextInt(101);
             int num2 = rd.nextInt(101);
-            switch (randomNumber) {
-                case 0:
+            if (randomNumber == 0) {
                     System.out.println("Question: " + num1 + " " + num2);
-                    int answer = sc.nextInt();
                     int gcd = calculateGCD(num1, num2);
-                    System.out.println("Your answer: " + answer);
+                    System.out.print("Your answer: ");
+                    int answer = sc.nextInt();
                     if (answer == gcd) {
                         System.out.println("Correct!");
                         counter++;
                     } else {
-                        System.out.println(answer + " is wrong answer ;(. Correct answer was '25'.\n"
-                               + "Let's try again, " + userName);
-                        return;
+                        System.out.println(answer + " is wrong answer ;(. Correct answer was " + calculateGCD(num1, num2) + ".\n"
+                                + "Let's try again, " + userName);
+                        System.exit(0);
                     }
-                    break;
-                default:
-                    System.out.println("Error");
-
-            }
+                }
         }
         if(counter == 3) {
             System.out.println("Congratulations, " + userName);
