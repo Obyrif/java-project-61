@@ -1,45 +1,34 @@
 package hexlet.code.game;
 
+import hexlet.code.Engine;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class Prime {
+    private static final String DEST = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+
     public static void getPrime() {
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        Scanner sc = new Scanner(System.in);
-        String userName = sc.nextLine();
-        System.out.println("Hello, " + userName + "!");
-
+        String[][] qAndA = new String[Engine.ROUNDS][2];
         Random random = new Random();
-        int count = 0;
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
-        while (count < 3) {
+        for (int i = 0; i < Engine.ROUNDS; i++) {
             int number = random.nextInt(100); // генерируем число
-            System.out.println("Question: " + number);
-            System.out.print("Your answer: ");
-            String answer = sc.nextLine();
-            boolean isPrimeNumber = true;
-            for (int i = 2; i < number; i++) {
-                if (number % i == 0) {
-                    isPrimeNumber = false;
-                    break;
-                }
-            }
-            String result = isPrimeNumber ? "yes" : "no";
-            if (answer.equalsIgnoreCase(result)) {
-                System.out.println("Correct!");
-            } else {
-                System.out.println(answer + " is wrong answer ;(. Correct answer was " + result + ".\n"
-                        + "Let's try again, " + userName);
-                return;
-            }
-            count++;
+
+            qAndA[i][Engine.QUESTION] = "" + number;
+            qAndA[i][Engine.ANSWER] = isPrimeNumber(number) ? "yes" : "no";
         }
-        if (count == 3) {
-            System.out.println("Congratulations, " + userName + "!");
+        Engine.engine(DEST, qAndA);
+    }
+
+    public static boolean isPrimeNumber(int number) {
+        if (number < 2) {
+            return false;
         }
+        for (int j = 2; j <= number / 2; j++) {
+            if (number % j == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }

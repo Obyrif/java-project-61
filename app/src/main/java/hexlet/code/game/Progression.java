@@ -1,55 +1,42 @@
 package hexlet.code.game;
 
+import hexlet.code.Engine;
+
 import java.util.Random;
-import java.util.Scanner;
 
 public class Progression {
-    public static void getProgression() {
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        Scanner sc = new Scanner(System.in);
-        String userName = sc.nextLine();
-        System.out.println("Hello, " + userName + "!");
+    private static final String DEST = "What number is missing in the progression?";
+    private static final int MIN_LENGTH = 5;
+    private static final int MAX_LENGTH = 10;
 
+    public static void getProgression() {
+        String[][] qAndA = new String[Engine.ROUNDS][2];
         Random random = new Random();
 
-        int minLength = 5;
-        int maxLength = 10;
-        int progressionLength = random.nextInt(maxLength - minLength + 1) + minLength;
+        int progressionLength = random.nextInt(MAX_LENGTH - MIN_LENGTH + 1) + MIN_LENGTH;
         int index = random.nextInt(progressionLength);
-        int count = 0;
 
-        System.out.println("What number is missing in the progression?");
-        while (count < 3) {
-            System.out.print("Question: ");
+        for (int i = 0; i < Engine.ROUNDS; i++) {
+            qAndA[i] = new String[2];
             int firstNumber = random.nextInt(100);
             int difference = random.nextInt(10) + 1;
             int hiddenNumber = 0;
 
-            for (int i = 0; i < progressionLength; i++) {
-                if (i == index) {
-                    System.out.print(".. ");
+            StringBuilder progression = new StringBuilder();
+            for (int j = 0; j < progressionLength; j++) {
+                if (j == index) {
+                    progression.append("..");
                     hiddenNumber = firstNumber;
                 } else {
-                    System.out.print(firstNumber + " ");
+                    progression.append(firstNumber).append(" ");
                 }
                 firstNumber += difference;
             }
-            System.out.println();
+            String progressionString = progression.toString();
 
-            System.out.print("Your answer: ");
-            int answer = sc.nextInt();
-            if (answer == hiddenNumber) {
-                System.out.println("Correct!");
-            } else {
-                System.out.println(answer + " is wrong answer ;(. Correct answer was " + hiddenNumber + ".\n"
-                        + "Let's try again, " + userName);
-                return;
-            }
-            count++;
+            qAndA[i][Engine.QUESTION] = progressionLength + " " + progressionString;
+            qAndA[i][Engine.ANSWER] = String.valueOf(hiddenNumber);
         }
-        if (count == 3) {
-            System.out.println("Congratulations, " + userName + "!");
-        }
+        Engine.engine(DEST, qAndA);
     }
 }
