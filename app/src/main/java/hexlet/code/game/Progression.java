@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class Progression {
     private static final String DEST = "What number is missing in the progression?";
-    private static final int MIN_LENGTH = 6;
+    private static final int MIN_LENGTH = 5;
     private static final int MAX_LENGTH = 10;
 
     public static void getProgression() {
