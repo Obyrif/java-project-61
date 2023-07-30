@@ -25,7 +25,7 @@ public class Progression {
             StringBuilder progression = new StringBuilder();
             for (int j = 0; j < progressionLength; j++) {
                 if (j == index) {
-                    progression.append(".. ");
+                    progression.append("..");
                     hiddenNumber = firstNumber;
                 } else {
                     progression.append(firstNumber).append(" ");

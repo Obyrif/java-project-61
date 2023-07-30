@@ -1,12 +1,13 @@
 package hexlet.code.game;
 
 import hexlet.code.Engine;
+import hexlet.code.Util;
 
 import java.util.Random;
 
 public class Calc {
     private static final String DEST = "What is the result of the expression?";
-    private static final char[] OPERATION = {'+', '-', '*'};
+    public static final char[] OPERATION = {'+', '-', '*'};
 
     public static void getCalc() {
         String[][] qAndA = new String[Engine.ROUNDS][2];
@@ -15,7 +16,7 @@ public class Calc {
         for (int i = 0; i < Engine.ROUNDS; i++) {
             int num1 = rd.nextInt(31);
             int num2 = rd.nextInt(31);
-            int numberOperat = (int) Math.floor(Math.random() * OPERATION.length);
+            int numberOperat = Util.random();
             char res = OPERATION[numberOperat];
             int resultOperation = 0;
             switch (res) {
