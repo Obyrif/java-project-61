@@ -34,7 +34,7 @@ public class Progression {
             }
             String progressionString = progression.toString();
 
-            qAndA[i][Engine.QUESTION] = progressionLength + " " + progressionString;
+            qAndA[i][Engine.QUESTION] = progressionString;
             qAndA[i][Engine.ANSWER] = String.valueOf(hiddenNumber);
         }
         Engine.engine(DEST, qAndA);
