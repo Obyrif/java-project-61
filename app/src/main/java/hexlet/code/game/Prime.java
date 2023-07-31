@@ -6,15 +6,17 @@ import java.util.Random;
 
 public class Prime {
     private static final String DEST = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    private static final int MAX_NUMBER = 100;
 
     public static void getPrime() {
         String[][] qAndA = new String[Engine.ROUNDS][2];
         Random random = new Random();
 
         for (int i = 0; i < Engine.ROUNDS; i++) {
-            int number = random.nextInt(100); // генерируем число
+            int number = random.nextInt(MAX_NUMBER); // генерируем число
+            String numberOf = String.valueOf(number);
 
-            qAndA[i][Engine.QUESTION] = "" + number;
+            qAndA[i][Engine.QUESTION] = numberOf;
             qAndA[i][Engine.ANSWER] = isPrimeNumber(number) ? "yes" : "no";
         }
         Engine.engine(DEST, qAndA);

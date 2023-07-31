@@ -8,14 +8,15 @@ import java.util.Random;
 public class Calc {
     private static final String DEST = "What is the result of the expression?";
     public static final char[] OPERATION = {'+', '-', '*'};
+    public static final int MAX_NUMBER = 31;
 
     public static void getCalc() {
         String[][] qAndA = new String[Engine.ROUNDS][2];
 
         Random rd = new Random();
         for (int i = 0; i < Engine.ROUNDS; i++) {
-            int num1 = rd.nextInt(31);
-            int num2 = rd.nextInt(31);
+            int num1 = rd.nextInt(MAX_NUMBER);
+            int num2 = rd.nextInt(MAX_NUMBER);
             int numberOperat = Util.random();
             char res = OPERATION[numberOperat];
             int resultOperation = 0;
@@ -32,8 +33,9 @@ public class Calc {
                 default:
                     System.out.println("Error");
             }
-            qAndA[i][Engine.QUESTION] = "" + num1 + " " + res + " " + num2;
-            qAndA[i][Engine.ANSWER] = "" + resultOperation;
+            String resultOperationOf = String.valueOf(resultOperation);
+            qAndA[i][Engine.QUESTION] = num1 + " " + res + " " + num2;
+            qAndA[i][Engine.ANSWER] = resultOperationOf;
         }
         Engine.engine(DEST, qAndA);
     }

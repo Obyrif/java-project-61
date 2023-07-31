@@ -6,6 +6,7 @@ import java.util.Random;
 
 public class GCD {
     private static final String DEST = "Find the greatest common divisor of given numbers.";
+    private static final int MAX_NUMBER = 101;
 
     public static void getGCD() {
         String[][] qAndA = new String[Engine.ROUNDS][2];
@@ -13,10 +14,10 @@ public class GCD {
         Random rd = new Random();
         for (int i = 0; i < Engine.ROUNDS; i++) {
 
-            int num1 = rd.nextInt(101);
-            int num2 = rd.nextInt(101);
+            int num1 = rd.nextInt(MAX_NUMBER);
+            int num2 = rd.nextInt(MAX_NUMBER);
 
-            qAndA[i][Engine.QUESTION] = "" + num1 + " " + num2;
+            qAndA[i][Engine.QUESTION] = num1 + " " + num2;
             qAndA[i][Engine.ANSWER] = "" + calcGCD(num1, num2);
         }
         Engine.engine(DEST, qAndA);
