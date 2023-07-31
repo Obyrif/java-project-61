@@ -14,9 +14,9 @@ public class Progression {
         Random random = new Random();
 
         int progressionLength = random.nextInt(MAX_LENGTH - MIN_LENGTH + 1) + MIN_LENGTH;
-        int index = random.nextInt(progressionLength);
 
         for (int i = 0; i < Engine.ROUNDS; i++) {
+            int index = random.nextInt(progressionLength - 1);
             qAndA[i] = new String[2];
             int firstNumber = random.nextInt(100);
             int difference = random.nextInt(10) + 1;
