@@ -1,8 +1,7 @@
 package hexlet.code.game;
 
 import hexlet.code.Engine;
-
-import java.util.Random;
+import hexlet.code.Util;
 
 public class Prime {
     private static final String DEST = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
@@ -10,10 +9,9 @@ public class Prime {
 
     public static void getPrime() {
         String[][] qAndA = new String[Engine.ROUNDS][2];
-        Random random = new Random();
 
         for (int i = 0; i < Engine.ROUNDS; i++) {
-            int number = random.nextInt(MAX_NUMBER); // генерируем число
+            int number = Util.getRandomWithUpperLimit(MAX_NUMBER); // генерируем число
             String numberOf = String.valueOf(number);
 
             qAndA[i][Engine.QUESTION] = numberOf;

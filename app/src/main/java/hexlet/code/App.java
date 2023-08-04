@@ -9,13 +9,6 @@ import hexlet.code.game.Progression;
 import java.util.Scanner;
 
 public class App {
-    private static final int ONE = 1;
-    private static final int TWO = 2;
-    private static final int THREE = 3;
-    private static final int FOUR = 4;
-    private static final int FIVE = 5;
-    private static final int SIX = 6;
-    private static final int NULL = 0;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter the game number and press Enter.");
@@ -23,20 +16,28 @@ public class App {
         System.out.print("Your choice: ");
         int player = sc.nextInt();
         System.out.println();
-        if (player == ONE) {
-            Cli.getUserName();
-        } else if (player == TWO) {
-            Even.getEven();
-        } else if (player == THREE) {
-            Calc.getCalc();
-        } else if (player == FOUR) {
-            GCD.getGCD();
-        } else if (player == FIVE) {
-            Progression.getProgression();
-        } else if (player == SIX) {
-            Prime.getPrime();
-        } else if (player == NULL) {
-            sc.close();
+        switch (player) {
+            case 1:
+                Cli.getUserName();
+                break;
+            case 2:
+                Even.getEven();
+                break;
+            case 3:
+                Calc.getCalc();
+                break;
+            case 4:
+                GCD.getGCD();
+                break;
+            case 5:
+                Progression.getProgression();
+                break;
+            case 6:
+                Prime.getPrime();
+                break;
+            default:
+                sc.close();
+                break;
         }
     }
 }

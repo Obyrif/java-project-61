@@ -1,6 +1,7 @@
 package hexlet.code.game;
 
 import hexlet.code.Engine;
+import hexlet.code.Util;
 
 import java.util.Random;
 
@@ -16,7 +17,7 @@ public class Progression {
         String[][] qAndA = new String[Engine.ROUNDS][2];
         Random random = new Random();
 
-        int progressionLength = random.nextInt(MAX_LENGTH - MIN_LENGTH + 1) + MIN_LENGTH;
+        int progressionLength = Util.getRandomWithRange(MIN_LENGTH, MAX_LENGTH);
         int index = random.nextInt(progressionLength);
         int hiddenNumber = 0;
 
