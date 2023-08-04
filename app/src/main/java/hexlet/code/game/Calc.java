@@ -30,7 +30,7 @@ public class Calc {
         int randomIndex = Util.getRandomWithUpperLimit(OPERATION.length - 1);
         return OPERATION[randomIndex];
     }
-    public static int getRes (int num1, int num2, char operation) {
+    public static int getRes(int num1, int num2, char operation) {
         int result = 0;
         switch (operation) {
             case '+':
