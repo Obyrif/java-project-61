@@ -13,8 +13,8 @@ public class GCD {
 
         for (int i = 0; i < Engine.ROUNDS; i++) {
 
-            int num1 = Util.getRandomWithUpperLimit(MAX_NUMBER);
-            int num2 = Util.getRandomWithUpperLimit(MAX_NUMBER);
+            int num1 = Util.getRandom(MAX_NUMBER);
+            int num2 = Util.getRandom(MAX_NUMBER);
 
             qAndA[i][Engine.QUESTION] = num1 + " " + num2;
             qAndA[i][Engine.ANSWER] = "" + calcGCD(num1, num2);

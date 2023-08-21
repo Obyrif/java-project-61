@@ -11,7 +11,7 @@ public class Prime {
         String[][] qAndA = new String[Engine.ROUNDS][2];
 
         for (int i = 0; i < Engine.ROUNDS; i++) {
-            int number = Util.getRandomWithUpperLimit(MAX_NUMBER); // генерируем число
+            int number = Util.getRandom(MAX_NUMBER); // генерируем число
             String numberOf = String.valueOf(number);
 
             qAndA[i][Engine.QUESTION] = numberOf;

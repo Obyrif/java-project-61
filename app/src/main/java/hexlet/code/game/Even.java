@@ -8,17 +8,19 @@ public class Even {
     private static final int MAX_NUMBER = 100;
 
     public static void getEven() {
-        Util.getRandom();
         String[][] qAndA = new String[Engine.ROUNDS][2];
 
         for (int i = 0; i < Engine.ROUNDS; i++) {
-            int number = Util.getRandom().nextInt(MAX_NUMBER) + 1;
+            int number = Util.getRandom(MAX_NUMBER) + 1;
             String numberOf = String.valueOf(number);
-            String correctAnswer = (number % 2 == 0) ? "yes" : "no";
+            String correctAnswer = getEven(number) ? "yes" : "no";
 
             qAndA[i][Engine.QUESTION] = numberOf;
             qAndA[i][Engine.ANSWER] = correctAnswer;
         }
         Engine.engine(DEST, qAndA);
+    }
+    public static boolean getEven(int numberEven) {
+        return numberEven % 2 == 0;
     }
 }
