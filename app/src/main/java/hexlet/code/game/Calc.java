@@ -13,8 +13,8 @@ public class Calc {
         String[][] qAndA = new String[Engine.ROUNDS][2];
 
         for (int i = 0; i < Engine.ROUNDS; i++) {
-            int num1 = Util.getRandom(MAX_NUMBER);;
-            int num2 = Util.getRandom(MAX_NUMBER);;
+            int num1 = Util.getRandom(MAX_NUMBER);
+            int num2 = Util.getRandom(MAX_NUMBER);
             char operation = getRandomOperation();
             int result = calculate(num1, num2, operation);
             String resultOperationOf = String.valueOf(result);
